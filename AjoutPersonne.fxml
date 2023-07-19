@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="encreEtagere" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AjPersonneController">
+   <children>
+      <VBox id="etagere" fx:id="etagere" alignment="CENTER_LEFT" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" stylesheets="@formsStyle.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane id="Titre" fx:id="Titre" minHeight="100.0" minWidth="600.0" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <StackPane prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Label text="Ajout d'une nouvelle Personne" />
+                     </children>
+                  </StackPane>
+               </children></Pane>
+            <Pane id="titreGrille" fx:id="titreGrille" minHeight="60.0" minWidth="580.0" styleClass="petitTitre">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane id="Grille" fx:id="Grille" alignment="CENTER_RIGHT" hgap="10.0" vgap="30.0" VBox.vgrow="SOMETIMES">
+              <columnConstraints>
+                <ColumnConstraints fillWidth="false" halignment="RIGHT" />
+                <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nom" />
+                  <Label text="Prénom" GridPane.rowIndex="1" />
+                  <Label text="Sexe" GridPane.rowIndex="2" />
+                  <Label text="Date de naissance" GridPane.rowIndex="3" />
+                  <Label text="Lieu de Naissance" GridPane.rowIndex="4" />
+                  <Label text="Fonction" GridPane.rowIndex="5" />
+                  <VBox GridPane.columnIndex="1">
+                     <children>
+                        <JFXTextField fx:id="Nom" focusColor="#0fdd32" labelFloat="true" promptText="Vous vous appelez" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <JFXTextField fx:id="Prenom" focusColor="#09dd34" labelFloat="true" promptText="Vous vous prénommez" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <JFXDatePicker fx:id="DateNaissance" defaultColor="#0cfc14" promptText="Date de Naissance" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <JFXTextField fx:id="LieuN" focusColor="#0de483" labelFloat="true" promptText="Vous êtes né à" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <JFXComboBox fx:id="Sexe" focusColor="#19f239" labelFloat="true" promptText="Vous êtes de sexe" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <JFXComboBox fx:id="Fonction" focusColor="#0bf28a" labelFloat="true" onAction="#actionChoixFonction" promptText="Vous êtes" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </GridPane>
+            <Pane id="titreEtudiant" fx:id="titreEtudiant" minHeight="60.0" minWidth="580.0" styleClass="petitTitre" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane id="Etudiant" fx:id="blocEtudiant" alignment="CENTER_LEFT" hgap="10.0" vgap="30.0" VBox.vgrow="SOMETIMES">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="96.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="39.0" text="Cycle" />
+                  <Label prefHeight="17.0" prefWidth="46.0" text="Niveau" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="77.0" text="Département" GridPane.rowIndex="2" />
+                  <Label prefHeight="17.0" prefWidth="37.0" text="Filière" GridPane.rowIndex="3" />
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Matricule" GridPane.rowIndex="4" />
+                  <VBox GridPane.columnIndex="1">
+                     <children>
+                        <JFXComboBox fx:id="Cycle" labelFloat="true" onAction="#actionChoixCycle" prefHeight="25.0" prefWidth="121.0" promptText="Cycle d'étude" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <JFXComboBox fx:id="Niveau" labelFloat="true" promptText="Niveau d'étude" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <JFXComboBox fx:id="Departement" labelFloat="true" onAction="#actionChoixDepartement" promptText="Vous êtes du département de" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <JFXComboBox fx:id="Filiere" labelFloat="true" promptText="Votre filière est" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <JFXTextField fx:id="Matricule" labelFloat="true" promptText="Numéro Matricule" />
+                     </children>
+                  </VBox>
+                  <Label id="Generer" fx:id="Generer" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#idGeneration" prefHeight="35.0" prefWidth="120.0" text="Générer" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding></Label>
+                  <Label text="Crédits acquis" GridPane.rowIndex="5" />
+                  <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <Spinner fx:id="Credits" disable="true" editable="true" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </GridPane>
+            <Pane id="titreEnseignant" fx:id="titreEnseignant" minHeight="60.0" minWidth="580.0" styleClass="petitTitre" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane id="Enseignant" fx:id="blocEnseignant" hgap="10.0" vgap="20.0" VBox.vgrow="SOMETIMES">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="96.0" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="35.0" text="Grade" />
+                  <VBox GridPane.columnIndex="1">
+                     <children>
+                        <JFXComboBox fx:id="Grade" labelFloat="true" prefHeight="25.0" prefWidth="172.0" promptText="Gradué en tant que" />
+                     </children>
+                  </VBox>
+                  <Label text="Département" GridPane.rowIndex="1" />
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <JFXComboBox fx:id="DeptEnseignant" labelFloat="true" promptText="Vous êtes du département " />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox fx:id="zoneBoutton" spacing="50.0">
+               <children>
+                  <Label id="Valider" fx:id="Valider" alignment="BASELINE_LEFT" minHeight="50.0" minWidth="150.0" onMouseClicked="#actionValider" text="Valider" textAlignment="CENTER">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+                  <Label id="Annuler" fx:id="Annuler" minHeight="50.0" minWidth="150.0" onMouseClicked="#actionAnnuler" text="Annuler" textAlignment="CENTER">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="100.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

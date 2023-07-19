@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancetre" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AjNoteController">
+   <children>
+      <VBox id="etagere" fx:id="etagere" alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" stylesheets="@formsStyle.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane id="Titre" fx:id="titre" minHeight="100.0" minWidth="600.0" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <StackPane prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Label text="Ajouter une Note" />
+                     </children>
+                  </StackPane>
+               </children></Pane>
+            <Pane id="titreGrille" fx:id="titre1" minHeight="60.0" minWidth="580.0" styleClass="petitTitre">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane fx:id="grille1" alignment="CENTER_RIGHT" hgap="10.0" vgap="30.0" VBox.vgrow="SOMETIMES">
+              <columnConstraints>
+                <ColumnConstraints fillWidth="false" halignment="RIGHT" minWidth="60.0" />
+                <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="UE" />
+                  <VBox GridPane.columnIndex="1">
+                     <children>
+                        <JFXComboBox fx:id="CodeUE" focusColor="#19f239" labelFloat="true" promptText="Code UE" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+               </padding>
+            </GridPane>
+            <TableView fx:id="ListeEtudiants" maxHeight="200.0" minWidth="400.0" VBox.vgrow="SOMETIMES">
+              <columns>
+                <TableColumn fx:id="colonneMatricule" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="75.0" text="Matricule" />
+                <TableColumn fx:id="colonnePrenom" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="75.0" text="Prenom" />
+                  <TableColumn fx:id="colonneNom" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="75.0" text="Nom" />
+              </columns>
+            </TableView>
+            <HBox fx:id="infosElu" spacing="10.0">
+               <children>
+                  <Label prefHeight="59.0" prefWidth="108.0" text="Etudiant Choisi:" textFill="GREEN">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LabelEtudiantChoisi" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="344.0" text="Aucun" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane id="titreEtudiant" fx:id="titre2" minHeight="60.0" minWidth="580.0" styleClass="petitTitre" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane fx:id="grille2" alignment="CENTER_LEFT" hgap="10.0" vgap="30.0" VBox.vgrow="SOMETIMES">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="60.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="CC" GridPane.halignment="RIGHT" />
+                  <Label text="TP" textAlignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="TPE" GridPane.rowIndex="2" />
+                  <Label text="Examen S1" GridPane.rowIndex="3" />
+                  <Label text="Examen S2" GridPane.rowIndex="4" />
+                  <VBox GridPane.columnIndex="1">
+                     <children>
+                        <Spinner fx:id="NoteCC" editable="true" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Spinner fx:id="NoteTP" editable="true" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Spinner fx:id="NoteTPE" editable="true" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Spinner fx:id="NoteExam1" editable="true" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <Spinner fx:id="NoteExam2" editable="true" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </GridPane>
+            <HBox fx:id="zoneBoutton" fillHeight="false" spacing="50.0">
+               <children>
+                  <Label id="Valider" fx:id="Valider" alignment="BASELINE_LEFT" minHeight="50.0" minWidth="150.0" onMouseClicked="#actionValider" text="Valider" textAlignment="CENTER">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+                  <Label id="Annuler" fx:id="Annuler" minHeight="50.0" minWidth="150.0" onMouseClicked="#actionAnnuler" text="Annuler" textAlignment="CENTER">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

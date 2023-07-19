@@ -1,0 +1,29 @@
+#Valider, #Annuler {
+  -fx-background-image: url('IMG/v4/bouttonOFF.png');
+  -fx-background-size: 150 50;
+}
+#Generer {
+    -fx-background-image: url('IMG/v4/bouttonOFF.png');
+    -fx-background-size: 120 35;
+}
+
+.petitTitre {
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: green;
+}
+#Titre {
+    -fx-font-size: 20;
+    -fx-text-fill: green;
+}
+#Rechercher {
+    -fx-background-image: url('IMG/v4/bouttonOFF.png');
+      -fx-background-size: 100 30;
+}
+#FiltersBloc {
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: green;
+    -fx-border-radius: 5;
+}
+.texteTitre{
+    -fx-font-color: green;
+}

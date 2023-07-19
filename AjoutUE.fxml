@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DadNode" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AjUEController">
+   <children>
+      <VBox id="etagere" fx:id="etagere" alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" stylesheets="@formsStyle.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane id="Titre" fx:id="titre" minHeight="100.0" minWidth="600.0" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <StackPane prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Label text="Ajout d'une nouvelle Unité d'Enseignement" />
+                     </children>
+                  </StackPane>
+               </children></Pane>
+            <Pane id="titreGrille" fx:id="titre1" minHeight="60.0" minWidth="580.0" styleClass="petitTitre">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane fx:id="grille1" alignment="CENTER_RIGHT" hgap="10.0" vgap="30.0" VBox.vgrow="SOMETIMES">
+              <columnConstraints>
+                <ColumnConstraints fillWidth="false" halignment="RIGHT" />
+                <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Intitulé" />
+                  <Label text="Code" GridPane.rowIndex="1" />
+                  <Label text="Crédits" GridPane.rowIndex="2" />
+                  <VBox GridPane.columnIndex="1">
+                     <children>
+                        <JFXTextField fx:id="intitule" focusColor="GREEN" labelFloat="true" promptText="UE dénommée" />
+                     </children>
+                  </VBox>
+                  <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <JFXTextField fx:id="code" focusColor="#09dd34" labelFloat="true" promptText="UE référencé par" />
+                     </children>
+                  </VBox>
+                  <Spinner fx:id="credits" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+               </padding>
+            </GridPane>
+            <Pane id="titreEtudiant" fx:id="titre2" minHeight="60.0" minWidth="580.0" styleClass="petitTitre" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Pane>
+            <GridPane fx:id="grille2" alignment="CENTER_LEFT" hgap="10.0" vgap="30.0" VBox.vgrow="SOMETIMES">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="200.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="90.0" text="Pourcentage CC" GridPane.halignment="RIGHT" />
+                  <Label text="CC Noté sur" textAlignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="Pourcentage TP" GridPane.rowIndex="2" />
+                  <Label text="TP Noté sur" GridPane.rowIndex="3" />
+                  <Label prefHeight="17.0" prefWidth="94.0" text="Pourcentage TPE" GridPane.rowIndex="4" />
+                  <Label text="TPE Noté sur" GridPane.rowIndex="5" />
+                  <Label text="Pourcentage Examen" GridPane.rowIndex="6" />
+                  <Label text="Examen Noté sur" GridPane.rowIndex="7" />
+                  <Label fx:id="valeurPCC" text="\%" textFill="GREEN" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="valeurPTP" text="\%" textFill="GREEN" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="valeurPTPE" text="\%" textFill="GREEN" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label fx:id="valeurPEE" text="\%" textFill="GREEN" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <JFXSlider fx:id="P_CC" blockIncrement="15.0" majorTickUnit="15.0" minorTickCount="5" showTickLabels="true" GridPane.columnIndex="1" />
+                  <JFXSlider fx:id="P_TP" majorTickUnit="15.0" minorTickCount="5" showTickLabels="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXSlider fx:id="P_TPE" majorTickUnit="15.0" minorTickCount="5" showTickLabels="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <JFXSlider fx:id="P_EE" majorTickUnit="15.0" minorTickCount="5" showTickLabels="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Spinner fx:id="D_CC" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Spinner fx:id="D_TP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Spinner fx:id="D_TPE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Spinner fx:id="D_EE" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </GridPane>
+            <HBox fx:id="zoneBoutton" fillHeight="false" spacing="50.0">
+               <children>
+                  <Label id="Valider" fx:id="Valider" alignment="BASELINE_LEFT" minHeight="50.0" minWidth="150.0" onMouseClicked="#actionValider" text="Valider" textAlignment="CENTER">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+                  <Label id="Annuler" fx:id="Annuler" minHeight="50.0" minWidth="150.0" onMouseClicked="#actionAnnuler" text="Annuler" textAlignment="CENTER">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
